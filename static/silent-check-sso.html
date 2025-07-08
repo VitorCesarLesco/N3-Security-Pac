@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Silent Check SSO</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/keycloak-js@22.0.1/dist/keycloak.min.js"></script>
+    <script>
+        var keycloak = new Keycloak({
+            url: 'http://localhost:8080',
+            realm: 'n3-security',
+            clientId: 'n3-app'
+        });
+        
+        keycloak.init({
+            onLoad: 'check-sso',
+            checkLoginIframe: false,
+            pkceMethod: 'S256'
+        }).then(function(authenticated) {
+            if (authenticated) {
+                parent.postMessage(location.href, location.origin);
+            }
+        }).catch(function(error) {
+            console.error('Silent check SSO error:', error);
+        });
+    </script>
+</body>
+</html>

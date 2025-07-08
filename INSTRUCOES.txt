@@ -1,0 +1,26 @@
+====================================================
+SISTEMA N3 SEGURANÇA - INSTRUÇÕES RÁPIDAS
+====================================================
+
+🚀 COMO USAR:
+1. Execute: menu_principal.bat
+2. Escolha opção 1: "INICIAR SISTEMA COMPLETO"
+3. Configure Keycloak (primeira vez)
+4. Teste o sistema
+
+🔐 CONFIGURAÇÃO KEYCLOAK (primeira vez):
+1. Acesse: http://localhost:8080
+2. Crie admin: admin/admin
+3. Crie realm: n3-security
+4. Crie client: n3-app
+5. Crie usuário: testuser/123456
+
+🌐 TESTE:
+1. Acesse: http://localhost:3001
+2. Login: testuser/123456
+3. Teste funcionalidades
+
+✅ PROBLEMA JAVA_HOME RESOLVIDO!
+✅ KEYCLOAK FUNCIONANDO CORRETAMENTE!
+✅ PRONTO PARA USO!
+====================================================
